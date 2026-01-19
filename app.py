@@ -70,7 +70,7 @@ def contact():
     return render_template("Contact us.html")
 
 
-@app.route("/book_table")
+@app.route("/book-table")
 def book_table():
     return render_template("Book_table.html")
 
@@ -153,5 +153,6 @@ if __name__ == "__main__":
         host="0.0.0.0",
         port=int(os.environ.get("PORT", 10000))
     )
+
 
 
