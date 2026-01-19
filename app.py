@@ -78,7 +78,7 @@ def contact():
 
 @app.route("/book-table")
 def book_table():
-    return render_template("Book_table.html")
+    return render_template("booktable.html")
 
 
 @app.route("/giftcard")
@@ -163,3 +163,4 @@ if __name__ == "__main__":
         host="0.0.0.0",
         port=int(os.environ.get("PORT", 10000))
     )
+
