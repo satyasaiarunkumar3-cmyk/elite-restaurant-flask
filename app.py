@@ -4,6 +4,8 @@ from flask import Flask, render_template, request, redirect, url_for
 
 # ================= APP CONFIG =================
 app = Flask(__name__)
+
+# Secret key (from Render environment variable)
 app.secret_key = os.environ.get("SECRET_KEY", "elite_restaurant_fallback_key")
 
 
@@ -19,6 +21,7 @@ def init_db():
     conn = get_db()
     cursor = conn.cursor()
 
+    # Book Table
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS bookings (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -31,6 +34,7 @@ def init_db():
         )
     """)
 
+    # Contact Us
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS contacts (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -40,6 +44,7 @@ def init_db():
         )
     """)
 
+    # Gift Cards
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS giftcards (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -55,6 +60,7 @@ def init_db():
 
 
 # ================= ROUTES =================
+
 @app.route("/")
 def home():
     return render_template("index.html")
@@ -80,7 +86,7 @@ def giftcard():
     return render_template("Giftcard.html")
 
 
-@app.route("/private_hire")
+@app.route("/private-hire")
 def private_hire():
     return render_template("private_Hire.html")
 
@@ -91,6 +97,8 @@ def thankyou():
 
 
 # ================= FORM HANDLERS =================
+
+# ---- Book Table ----
 @app.route("/book", methods=["POST"])
 def book():
     data = request.form
@@ -111,6 +119,7 @@ def book():
     return redirect(url_for("thankyou"))
 
 
+# ---- Contact Us ----
 @app.route("/send-message", methods=["POST"])
 def send_message():
     data = request.form
@@ -128,6 +137,7 @@ def send_message():
     return redirect(url_for("thankyou"))
 
 
+# ---- Buy Gift Card ----
 @app.route("/buy-giftcard", methods=["POST"])
 def buy_giftcard():
     data = request.form
@@ -147,12 +157,9 @@ def buy_giftcard():
 
 # ================= RUN APPLICATION =================
 if __name__ == "__main__":
-    init_db()   # ✅ called AFTER definition
+    init_db()  # create database tables automatically
 
     app.run(
         host="0.0.0.0",
         port=int(os.environ.get("PORT", 10000))
     )
-
-
-
