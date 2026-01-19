@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Gift Card - Elite Restaurant</title>
+
+  <style>
+    nav {
+      background-color: #f8f8f8;
+      padding: 15px 30px;
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #e94e1b;
+      padding: 10px 18px;
+      font-weight: 600;
+      border-radius: 25px;
+    }
+
+    nav a:hover {
+      background-color: #ffe8c4;
+      color: #000;
+    }
+
+    .nav-box {
+      background-color: #b53000;
+      color: #fff;
+      padding: 10px 25px;
+      font-weight: bold;
+      text-transform: uppercase;
+    }
+
+    .nav-box:hover {
+      background-color: #c03c0e;
+      color: white;
+    }
+
+    .giftcard-container {
+      max-width: 600px;
+      background-color: #fff3e0;
+      margin: 60px auto;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      padding: 30px 40px;
+      text-align: center;
+      color: #b53000;
+      font-weight: 700;
+      font-size: 28px;
+    }
+
+    .giftcard-container p {
+      font-size: 18px;
+      color: #444;
+      margin: 20px 0;
+      font-weight: normal;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px 12px;
+      margin-bottom: 20px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+    }
+
+    button {
+      background-color: #e94e1b;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      font-weight: bold;
+      font-size: 18px;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: #c03c0e;
+    }
+    @media (max-width: 600px) {
+
+  .booking-container,
+  .contact-container,
+  .giftcard-container,
+  .private-hire {
+    width: 90%;
+    padding: 20px;
+    font-size: 22px;
+  }
+
+  label {
+    font-size: 14px;
+  }
+
+  input, select, textarea {
+    font-size: 14px;
+  }
+
+  button {
+    width: 100%;
+    font-size: 16px;
+  }
+}
+
+  </style>
+</head>
+
+<body>
+
+<nav>
+  <a href="/" class="nav-box">Elite Restaurant</a>
+  <a href="/#restaurants">Home</a>
+  <a href="/contact">Contact Us</a>
+  <a href="/menu">Our Menu</a>
+  <a href="/private-hire">Private Hire</a>
+</nav>
+
+<section class="giftcard-container">
+  <h2>Purchase a Gift Card</h2>
+  <p>Give the gift of unforgettable dining experiences at Elite Restaurant.</p>
+
+  <!-- FLASK BACKEND -->
+  <form action="/buy-giftcard" method="POST">
+
+    <label for="recipient_name">Recipient's Name</label>
+    <input type="text" id="recipient_name" name="recipient_name" required />
+
+    <label for="recipient_email">Recipient's Email</label>
+    <input type="email" id="recipient_email" name="recipient_email" required />
+
+    <label for="amount">Gift Card Amount</label>
+    <select id="amount" name="amount" required>
+      <option value="" disabled selected>Select amount</option>
+      <option value="25">₹25</option>
+      <option value="50">₹50</option>
+      <option value="100">₹100</option>
+      <option value="200">₹200</option>
+    </select>
+
+    <button type="submit">Buy Gift Card</button>
+  </form>
+</section>
+
+</body>
+</html>

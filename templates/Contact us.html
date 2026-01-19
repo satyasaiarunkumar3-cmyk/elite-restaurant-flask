@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Contact Us - Elite Restaurant</title>
+
+  <style>
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background-color: #f8f8f8;
+      margin: 0;
+      padding: 0;
+    }
+
+    nav {
+      background-color: #f8f8f8;
+      padding: 15px 30px;
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      align-items: center;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #e94e1b;
+      padding: 10px 18px;
+      font-weight: 600;
+      border-radius: 25px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: #ffe8c4;
+      color: #000;
+    }
+
+    .nav-box {
+      background-color: #b53000;
+      color: #fff;
+      padding: 10px 25px;
+      font-weight: bold;
+      text-transform: uppercase;
+      box-shadow: 0 4px 8px rgba(253,243,240,0.4);
+    }
+
+    .nav-box:hover {
+      background-color: #c03c0e;
+      color: white;
+    }
+
+    .contact-container {
+      max-width: 600px;
+      background-color: #fff3e0;
+      margin: 60px auto;
+      border-radius: 15px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      padding: 35px 40px;
+      color: #b53000;
+    }
+
+    .contact-container h2 {
+      font-size: 30px;
+      margin-bottom: 10px;
+    }
+
+    .contact-container p {
+      font-size: 18px;
+      color: #444;
+      margin-bottom: 25px;
+    }
+
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+      color: #333;
+    }
+
+    input, textarea {
+      width: 100%;
+      padding: 10px 12px;
+      margin-bottom: 20px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 16px;
+      box-sizing: border-box;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 120px;
+    }
+
+    button {
+      background-color: #e94e1b;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      font-size: 18px;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #c03c0e;
+    }
+    @media (max-width: 600px) {
+
+  .booking-container,
+  .contact-container,
+  .giftcard-container,
+  .private-hire {
+    width: 90%;
+    padding: 20px;
+    font-size: 22px;
+  }
+
+  label {
+    font-size: 14px;
+  }
+
+  input, select, textarea {
+    font-size: 14px;
+  }
+
+  button {
+    width: 100%;
+    font-size: 16px;
+  }
+}
+
+  </style>
+</head>
+
+<body>
+
+<nav>
+  <a href="/" class="nav-box">Elite Restaurant</a>
+  <a href="/#restaurants">Home</a>
+  <a href="/menu">Our Menu</a>
+  <a href="/book-table">Book a Table</a>
+</nav>
+
+<section class="contact-container">
+  <h2>Contact Us</h2>
+  <p>Have a question or feedback? We’d love to hear from you.</p>
+
+  <!-- FLASK BACKEND CONNECTED -->
+  <form action="/send-message" method="POST">
+
+    <label for="name">Full Name</label>
+    <input type="text" id="name" name="name" placeholder="Your full name" required />
+
+    <label for="email">Email Address</label>
+    <input type="email" id="email" name="email" placeholder="Your email address" required />
+
+    <label for="message">Message</label>
+    <textarea id="message" name="message" placeholder="Write your message here..." required></textarea>
+
+    <button type="submit">Send Message</button>
+  </form>
+</section>
+
+</body>
+</html>

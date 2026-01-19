@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Private Hire - Elite Restaurant</title>
+
+  <style>
+    nav {
+      background-color: #f8f8f8;
+      padding: 15px 30px;
+      display: flex;
+      gap: 20px;
+      justify-content: center;
+      align-items: center;
+      font-family: Arial, sans-serif;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #e94e1b;
+      padding: 10px 18px;
+      font-weight: 600;
+      border-radius: 25px;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    nav a:hover {
+      background-color: #ffe8c4;
+      color: #000;
+    }
+
+    .nav-box {
+      background-color: #b53000;
+      color: #fff;
+      padding: 10px 25px;
+      font-weight: bold;
+      text-transform: uppercase;
+      box-shadow: 0 4px 8px rgba(253,243,240,0.4);
+    }
+
+    .nav-box:hover {
+      background-color: #c03c0e;
+      color: white;
+    }
+
+    .button-link {
+      background-color: #e94e1b;
+      color: white;
+      border-radius: 5px;
+      padding: 10px 20px;
+      font-weight: bold;
+    }
+
+    .button-link:hover {
+      background-color: #c03c0e;
+      color: white;
+    }
+
+    .private-hire {
+      background-color: #ffe8c4;
+      border-radius: 15px;
+      padding: 30px 35px;
+      margin: 60px auto;
+      max-width: 900px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      text-align: center;
+      color: #b53000;
+      font-weight: 700;
+      font-size: 28px;
+      transition: transform 0.3s ease;
+    }
+
+    .private-hire:hover {
+      transform: scale(1.02);
+    }
+
+    .private-hire p {
+      font-size: 18px;
+      color: #444;
+      margin-top: 15px;
+      line-height: 1.6;
+      font-weight: normal;
+    }
+
+    a {
+      text-decoration: none;
+      color: white;
+    }
+    @media (max-width: 600px) {
+  .private-hire {
+    width: 90%;
+    padding: 20px;
+    font-size: 22px;
+  }
+
+  label {
+    font-size: 14px;
+  }
+
+  input, select, textarea {
+    font-size: 14px;
+  }
+
+  button {
+    width: 100%;
+    font-size: 16px;
+  }
+}
+
+  </style>
+</head>
+
+<body>
+
+<nav>
+  <a href="/" class="nav-box">Elite Restaurant</a>
+  <a href="/#restaurants">Home</a>
+  <a href="/contact">Contact Us</a>
+  <a href="/menu">Our Menu</a>
+  <a href="/private-hire" class="button-link">Private Hire</a>
+</nav>
+
+<section class="private-hire">
+  <h2>Private Hire</h2>
+  <p>
+    Looking to book our venue for a special occasion?
+    We offer exclusive private hire options tailored to your needs —
+    perfect for celebrations, corporate events, and more.
+  </p>
+  <p>
+    Contact us to discuss availability, menus, and packages to make your event unforgettable.
+  </p>
+
+  <a href="/contact" class="button-link">Get in Touch</a>
+</section>
+
+</body>
+</html>
