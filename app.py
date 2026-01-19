@@ -60,6 +60,7 @@ def init_db():
 
 
 # ================= ROUTES =================
+
 @app.route("/")
 def home():
     return render_template("index.html")
@@ -96,6 +97,8 @@ def thankyou():
 
 
 # ================= FORM HANDLERS =================
+
+# ---- Book Table ----
 @app.route("/book", methods=["POST"])
 def book():
     data = request.form
@@ -116,6 +119,7 @@ def book():
     return redirect(url_for("thankyou"))
 
 
+# ---- Contact Us ----
 @app.route("/send-message", methods=["POST"])
 def send_message():
     data = request.form
@@ -133,6 +137,7 @@ def send_message():
     return redirect(url_for("thankyou"))
 
 
+# ---- Buy Gift Card ----
 @app.route("/buy-giftcard", methods=["POST"])
 def buy_giftcard():
     data = request.form
