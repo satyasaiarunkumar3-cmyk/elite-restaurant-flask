@@ -1,14 +1,12 @@
-from flask import Flask, render_template, request, redirect, url_for
-import sqlite3
 import os
-
-
-if __name__ == "__main__":
-    init_db()
-    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 10000)))
+import sqlite3
+from flask import Flask, render_template, request, redirect, url_for
 
 # ================= APP CONFIG =================
-app = Flask(__name__)   # templates/ and static/ folders are default
+app = Flask(__name__)
+
+# Secret key (from Render environment variable)
+app.secret_key = os.environ.get("SECRET_KEY", "elite_restaurant_fallback_key")
 
 
 # ================= DATABASE CONNECTION =================
@@ -23,7 +21,7 @@ def init_db():
     conn = get_db()
     cursor = conn.cursor()
 
-    # Table for table bookings
+    # Book Table
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS bookings (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -36,7 +34,7 @@ def init_db():
         )
     """)
 
-    # Table for contact messages
+    # Contact Us
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS contacts (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -46,7 +44,7 @@ def init_db():
         )
     """)
 
-    # Table for gift cards
+    # Gift Cards
     cursor.execute("""
         CREATE TABLE IF NOT EXISTS giftcards (
             id INTEGER PRIMARY KEY AUTOINCREMENT,
@@ -66,6 +64,7 @@ def init_db():
 @app.route("/")
 def home():
     return render_template("index.html")
+
 
 @app.route("/menu")
 def menu():
@@ -95,8 +94,6 @@ def private_hire():
 @app.route("/thankyou")
 def thankyou():
     return render_template("Thankyou.html")
-
-
 
 
 # ================= FORM HANDLERS =================
@@ -160,5 +157,10 @@ def buy_giftcard():
 
 # ================= RUN APPLICATION =================
 if __name__ == "__main__":
-    init_db()              # create tables automatically
-    app.run(debug=True)
+    init_db()  # create database tables automatically
+
+    app.run(
+        host="0.0.0.0",
+        port=int(os.environ.get("PORT", 10000))
+    )
+
