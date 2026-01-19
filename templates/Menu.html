@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Our Menu - Elite Restaurant</title>
 
+  <!-- External CSS -->
   <link rel="stylesheet" href="/static/style1.css" />
 
   <style>
@@ -12,11 +13,13 @@
       list-style: none;
       padding: 0;
     }
+
     .menu-section li {
       display: flex;
       align-items: center;
       margin-bottom: 15px;
     }
+
     .menu-section img {
       width: 100px;
       height: 80px;
@@ -24,94 +27,123 @@
       margin-right: 15px;
       border-radius: 5px;
     }
+
+    main {
+      padding: 40px 20px;
+    }
+
+    .content {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+
+    .content h1 {
+      font-size: 36px;
+      color: #b53000;
+    }
+
+    .content p {
+      font-size: 18px;
+      color: #444;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #f8f8f8;
+      margin-top: 40px;
+    }
   </style>
 </head>
 
 <body>
 
+<!-- NAVIGATION BAR -->
 <nav>
-  <a href="/" class="nav-box">ELITE RESTAURANT</a>
-  <a href="/#restaurants">HOME</a>
-  <a href="#veg">VEG</a>
-  <a href="#non-veg">NON-VEG</a>
-  <a href="#western">WESTERN</a>
-  <a href="/book-table" class="button-link">BOOK A TABLE</a>
+  <a href="/" class="nav-box">Elite Restaurant</a>
+  <a href="/">Home</a>
+  <a href="#veg">Veg</a>
+  <a href="#non-veg">Non-Veg</a>
+  <a href="#western">Western</a>
+  <a href="/book-table" class="button-link">Book a Table</a>
 </nav>
 
 <main>
 
+  <!-- HEADER -->
   <header class="content">
     <h1>Our Menu</h1>
     <p>Discover a curated selection of authentic dishes, crafted to delight every palate.</p>
   </header>
 
-  <!-- VEG -->
+  <!-- VEG SECTION -->
   <section id="veg" class="menu-section">
     <h2>Vegetarian Dishes</h2>
     <ul>
       <li>
-        <img src="/static/images/paneer tika.jpeg" alt="Paneer Tikka">
-        <strong>Paneer Tikka:</strong> Marinated paneer cubes grilled to perfection.
+        <img src="/static/images/paneer_tikka.jpeg" alt="Paneer Tikka" />
+        <strong>Paneer Tikka:</strong>&nbsp;Marinated paneer cubes grilled to perfection.
       </li>
       <li>
-        <img src="/static/images/dal makhani.jpg" alt="Dal Makhani">
-        <strong>Dal Makhani:</strong> Slow-cooked creamy lentils with butter and spices.
+        <img src="/static/images/dal_makhani.jpg" alt="Dal Makhani" />
+        <strong>Dal Makhani:</strong>&nbsp;Slow-cooked creamy lentils with butter and spices.
       </li>
       <li>
-        <img src="/static/images/vegetable birayani.jpg" alt="Vegetable Biryani">
-        <strong>Vegetable Biryani:</strong> Aromatic rice cooked with fresh vegetables and herbs.
+        <img src="/static/images/vegetable_biryani.jpg" alt="Vegetable Biryani" />
+        <strong>Vegetable Biryani:</strong>&nbsp;Aromatic rice cooked with fresh vegetables and herbs.
       </li>
       <li><strong>Many more...</strong></li>
     </ul>
   </section>
 
-  <!-- NON VEG -->
+  <!-- NON-VEG SECTION -->
   <section id="non-veg" class="menu-section">
     <h2>Non-Vegetarian Dishes</h2>
     <ul>
       <li>
-        <img src="/static/images/butter chicken.jpeg" alt="Butter Chicken">
-        <strong>Butter Chicken:</strong> Tender chicken cooked in a creamy tomato gravy.
+        <img src="/static/images/butter_chicken.jpeg" alt="Butter Chicken" />
+        <strong>Butter Chicken:</strong>&nbsp;Tender chicken cooked in a creamy tomato gravy.
       </li>
       <li>
-        <img src="/static/images/fish curry.jpg" alt="Fish Curry">
-        <strong>Fish Curry:</strong> Coastal-style fish curry with tamarind and coconut milk.
+        <img src="/static/images/fish_curry.jpg" alt="Fish Curry" />
+        <strong>Fish Curry:</strong>&nbsp;Coastal-style fish curry with tamarind and coconut milk.
       </li>
       <li>
-        <img src="/static/images/Easy-Lamb-Rogan-Josh3.jpg" alt="Lamb Rogan Josh">
-        <strong>Lamb Rogan Josh:</strong> Slow-cooked lamb in a rich Kashmiri spice blend.
+        <img src="/static/images/lamb_rogan_josh.jpg" alt="Lamb Rogan Josh" />
+        <strong>Lamb Rogan Josh:</strong>&nbsp;Slow-cooked lamb in a rich Kashmiri spice blend.
       </li>
       <li><strong>Many more...</strong></li>
     </ul>
   </section>
 
-  <!-- WESTERN -->
+  <!-- WESTERN SECTION -->
   <section id="western" class="menu-section">
     <h2>Western Dishes</h2>
     <ul>
       <li>
-        <img src="/static/images/Grilled Chicken caesar salad.jpeg" alt="Grilled Chicken Caesar Salad">
-        <strong>Grilled Chicken Caesar Salad:</strong> Fresh romaine with grilled chicken and Caesar dressing.
+        <img src="/static/images/grilled_chicken_caesar_salad.jpeg" alt="Grilled Chicken Caesar Salad" />
+        <strong>Grilled Chicken Caesar Salad:</strong>&nbsp;Fresh romaine with grilled chicken and Caesar dressing.
       </li>
       <li>
-        <img src="/static/images/spaghetti aglio e olio.jpg" alt="Spaghetti Aglio e Olio">
-        <strong>Spaghetti Aglio e Olio:</strong> Classic garlic and olive oil pasta with chili flakes.
+        <img src="/static/images/spaghetti_aglio_e_olio.jpg" alt="Spaghetti Aglio e Olio" />
+        <strong>Spaghetti Aglio e Olio:</strong>&nbsp;Classic garlic and olive oil pasta with chili flakes.
       </li>
       <li>
-        <img src="/static/images/steak with herb butter.jpeg" alt="Steak with Herb Butter">
-        <strong>Steak with Herb Butter:</strong> Juicy steak topped with garlic herb butter.
+        <img src="/static/images/steak_with_herb_butter.jpeg" alt="Steak with Herb Butter" />
+        <strong>Steak with Herb Butter:</strong>&nbsp;Juicy steak topped with garlic herb butter.
       </li>
       <li><strong>Many more...</strong></li>
     </ul>
   </section>
 
-  <p>
-    <a href="/static/images/menu-card.pdf" download>Download Menu PDF</a>
+  <!-- DOWNLOAD -->
+  <p style="text-align:center; margin-top:30px;">
+    <a href="/static/images/menu-card.pdf" download>Download Menu (PDF)</a>
   </p>
 
 </main>
 
-<footer class="footer">
+<footer>
   <p>&copy; 2025 Elite Restaurant. All rights reserved.</p>
 </footer>
 
