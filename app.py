@@ -1,4 +1,4 @@
-import osimport os
+import os
 import sqlite3
 from flask import Flask, render_template, request, redirect, url_for
 
@@ -60,7 +60,6 @@ def init_db():
 
 
 # ================= ROUTES =================
-
 @app.route("/")
 def home():
     return render_template("index.html")
@@ -97,8 +96,6 @@ def thankyou():
 
 
 # ================= FORM HANDLERS =================
-
-# ---- Book Table ----
 @app.route("/book", methods=["POST"])
 def book():
     data = request.form
@@ -119,7 +116,6 @@ def book():
     return redirect(url_for("thankyou"))
 
 
-# ---- Contact Us ----
 @app.route("/send-message", methods=["POST"])
 def send_message():
     data = request.form
@@ -137,7 +133,6 @@ def send_message():
     return redirect(url_for("thankyou"))
 
 
-# ---- Buy Gift Card ----
 @app.route("/buy-giftcard", methods=["POST"])
 def buy_giftcard():
     data = request.form
@@ -163,5 +158,3 @@ if __name__ == "__main__":
         host="0.0.0.0",
         port=int(os.environ.get("PORT", 10000))
     )
-
-
