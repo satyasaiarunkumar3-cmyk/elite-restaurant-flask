@@ -109,32 +109,27 @@
     button:hover {
       background-color: #c03c0e;
     }
+
     @media (max-width: 600px) {
+      .booking-container {
+        width: 90%;
+        padding: 20px;
+        font-size: 22px;
+      }
 
-  .booking-container,
-  .contact-container,
-  .giftcard-container,
-  .private-hire {
-    width: 90%;
-    padding: 20px;
-    font-size: 22px;
-  }
+      label {
+        font-size: 14px;
+      }
 
-  label {
-    font-size: 14px;
-  }
+      input, select {
+        font-size: 14px;
+      }
 
-  input, select, textarea {
-    font-size: 14px;
-  }
-
-  button {
-    width: 100%;
-    font-size: 16px;
-  }
-}
-
-
+      button {
+        width: 100%;
+        font-size: 16px;
+      }
+    }
   </style>
 </head>
 
@@ -146,14 +141,15 @@
   <a href="/menu">Our Menu</a>
   <a href="/private-hire">Private Hire</a>
   <a href="/giftcard">Gift Card</a>
-  <a href="/book_table" class="button-link">Book a Table</a>
+  <!-- ✅ FIXED ROUTE -->
+  <a href="/book-table" class="button-link">Book a Table</a>
 </nav>
 
 <section class="booking-container">
   <h2>Book a Table</h2>
   <p>Reserve your table now to enjoy a memorable dining experience at Elite Restaurant.</p>
 
-  <!-- FLASK BACKEND -->
+  <!-- FLASK BACKEND CONNECTED -->
   <form action="/book" method="POST">
 
     <label for="name">Full Name</label>
@@ -188,4 +184,3 @@
 
 </body>
 </html>
-
