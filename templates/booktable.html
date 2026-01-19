@@ -4,7 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Book a Table - Elite Restaurant</title>
-  <link rel="icon" href="/static/images/log" type="image/png">
+
+  <!-- FAVICON -->
+  <link rel="icon" href="/static/images/log.png" type="image/png">
+
   <style>
     nav {
       background-color: #f8f8f8;
@@ -26,7 +29,7 @@
       padding: 10px 18px;
       font-weight: 600;
       border-radius: 25px;
-      transition: background-color 0.3s ease, color 0.3s ease;
+      transition: 0.3s;
     }
 
     nav a:hover {
@@ -40,12 +43,6 @@
       padding: 10px 25px;
       font-weight: bold;
       text-transform: uppercase;
-      box-shadow: 0 4px 8px rgba(253,243,240,0.4);
-    }
-
-    .nav-box:hover {
-      background-color: #c03c0e;
-      color: white;
     }
 
     .button-link {
@@ -56,28 +53,14 @@
       font-weight: bold;
     }
 
-    .button-link:hover {
-      background-color: #c03c0e;
-      color: white;
-    }
-
     .booking-container {
       max-width: 600px;
       background-color: #fff3e0;
       margin: 60px auto;
       border-radius: 15px;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
       padding: 30px 40px;
       color: #b53000;
-      font-weight: 700;
-      font-size: 28px;
-    }
-
-    .booking-container p {
-      font-size: 18px;
-      color: #444;
-      margin: 20px 0;
-      font-weight: normal;
+      font-size: 26px;
     }
 
     label {
@@ -86,9 +69,9 @@
       font-weight: 600;
     }
 
-    input, select {
+    input, select, textarea {
       width: 100%;
-      padding: 10px 12px;
+      padding: 10px;
       margin-bottom: 20px;
       border-radius: 6px;
       border: 1px solid #ccc;
@@ -106,28 +89,10 @@
       cursor: pointer;
     }
 
-    button:hover {
-      background-color: #c03c0e;
-    }
-
     @media (max-width: 600px) {
       .booking-container {
         width: 90%;
-        padding: 20px;
         font-size: 22px;
-      }
-
-      label {
-        font-size: 14px;
-      }
-
-      input, select {
-        font-size: 14px;
-      }
-
-      button {
-        width: 100%;
-        font-size: 16px;
       }
     }
   </style>
@@ -137,7 +102,7 @@
 
 <nav>
   <a href="/" class="nav-box">Elite Restaurant</a>
-  <a href="/#restaurants">Home</a>
+  <a href="/">Home</a>
   <a href="/menu">Our Menu</a>
   <a href="/private-hire">Private Hire</a>
   <a href="/giftcard">Gift Card</a>
@@ -146,25 +111,28 @@
 
 <section class="booking-container">
   <h2>Book a Table</h2>
-  <p>Reserve your table now to enjoy a memorable dining experience at Elite Restaurant.</p>
+  <p>Reserve your table now to enjoy a memorable dining experience.</p>
 
-  <!-- FLASK BACKEND CONNECTED -->
   <form action="/book" method="POST">
 
-    <label for="name">Full Name</label>
-    <input type="text" id="name" name="name" required />
+    <label for="cust_name">Full Name</label>
+    <input type="text" id="cust_name" name="name" required>
 
     <label for="email">Email Address</label>
-    <input type="email" id="email" name="email" required />
+    <input type="email" id="email" name="email" required>
 
     <label for="phone">Phone Number</label>
-    <input type="tel" id="phone" name="phone" required />
+    <input type="tel" id="phone" name="phone" required>
 
     <label for="date">Date</label>
-    <input type="date" id="date" name="booking_date" required />
+    <input type="date" id="date" name="booking_date" required>
 
     <label for="time">Time</label>
-    <input type="time" id="time" name="booking_time" required />
+    <input type="time" id="time" name="booking_time" required>
+
+    <label for="request">Dish Preference (Optional)</label>
+    <textarea id="request" name="special_request"
+      placeholder="Enter preferred dishes (optional)"></textarea>
 
     <label for="guests">Number of Guests</label>
     <select id="guests" name="guests" required>
@@ -183,5 +151,3 @@
 
 </body>
 </html>
-
-
